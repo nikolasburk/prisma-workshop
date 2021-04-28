@@ -9,7 +9,7 @@ This repository contains the starter project for the **A Practical Introduction 
 You can clone this repository with the following command:
 
 ```
-git clone git@github.com:nikolasburk/prisma-day-2020.git
+git clone git@github.com:nikolasburk/prisma-workshop.git
 ```
 
 > Alternatively, you can also download the project via the GitHub UI. Click the green **Clone**-button in the top-right corner and then click on **Download ZIP**.
@@ -19,7 +19,7 @@ git clone git@github.com:nikolasburk/prisma-day-2020.git
 Navigate into the project directory and install the npm dependencies with the following command:
 
 ```
-cd prisma-day-2020
+cd prisma-workshop
 npm install
 ```
 
