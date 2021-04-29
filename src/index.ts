@@ -1,72 +1,106 @@
-import { PrismaClient } from "@prisma/client";
-import express from "express";
+import { ApolloServer } from "apollo-server";
+import { DateTimeResolver } from "graphql-scalars";
+import { Context, context } from "./context";
 
-const prisma = new PrismaClient();
-const app = express();
+const typeDefs = `
+type Query {
+  allUsers: [User!]!
+  postById(id: Int!): Post
+  feed(searchString: String, skip: Int, take: Int): [Post!]!
+  draftsByUser(id: Int!): [Post]
+}
 
-app.use(express.json());
+type Mutation {
+  signupUser(name: String, email: String!): User!
+  createDraft(title: String!, content: String, authorEmail: String): Post
+  incrementPostViewCount(id: Int!): Post
+  deletePost(id: Int!): Post
+}
 
-app.get("/users", async (req, res) => {
-  // const result = TODO
-  // res.json(result)
-});
+type User {
+  id: Int!
+  email: String!
+  name: String
+  posts: [Post!]!
+}
 
-app.post(`/signup`, async (req, res) => {
-  const { name, email } = req.body;
+type Post {
+  id: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  title: String!
+  content: String
+  published: Boolean!
+  viewCount: Int!
+  author: User
+}
 
-  // const result = TODO
+scalar DateTime
+`;
 
-  // res.json(result)
-});
+const resolvers = {
+  Query: {
+    allUsers: (_parent, _args, context: Context) => {
+      // TODO
+    },
+    postById: (_parent, args: { id: number }, context: Context) => {
+      // TODO
+    },
+    feed: (
+      _parent,
+      args: {
+        searchString: string | undefined;
+        skip: number | undefined;
+        take: number | undefined;
+      },
+      context: Context
+    ) => {
+      // TODO
+    },
+    draftsByUser: (_parent, args: { id: number }, context: Context) => {
+      // TODO
+    },
+  },
+  Mutation: {
+    signupUser: (
+      _parent,
+      args: { name: string | undefined; email: string },
+      context: Context
+    ) => {
+      // TODO
+    },
+    createDraft: (
+      _parent,
+      args: { title: string; content: string | undefined; authorEmail: string },
+      context: Context
+    ) => {
+      // TODO
+    },
+    incrementPostViewCount: (
+      _parent,
+      args: { id: number },
+      context: Context
+    ) => {
+      // TODO
+    },
+    deletePost: (_parent, args: { id: number }, context: Context) => {
+      // TODO
+    },
+  },
+  Post: {
+    author: (parent, _args, context: Context) => {
+      return null;
+    },
+  },
+  User: {
+    posts: (parent, _args, context: Context) => {
+      return [];
+    },
+  },
+  DateTime: DateTimeResolver,
+};
 
-app.post(`/post`, async (req, res) => {
-  const { title, content, authorEmail } = req.body;
-
-  // const result = TODO
-
-  // res.json(result)
-});
-
-app.put("/post/:id/views", async (req, res) => {
-  const { id } = req.params;
-
-  // const result = TODO
-
-  // res.json(result)
-});
-
-app.put("/publish/:id", async (req, res) => {
-  const { id } = req.params;
-
-  // const result = TODO
-
-  // res.json(result)
-});
-
-app.get("/user/:id/drafts", async (req, res) => {
-  const { id } = req.params;
-
-  // const result = TODO
-
-  // res.json(result)
-});
-
-app.get(`/post/:id`, async (req, res) => {
-  const { id }: { id?: number } = req.params;
-
-  // const result = TODO
-
-  // res.json(result)
-});
-
-app.get("/feed", async (req, res) => {
-  const { searchString, skip, take, orderBy } = req.query;
-
-  // const result = TODO
-
-  // res.json(result)
-});
-
-app.listen(3000, () =>
-  console.log(`🚀 Server ready at: http://localhost:3000`)
+const server = new ApolloServer({ typeDefs, resolvers, context });
+server.listen({ port: 4000 }, () =>
+  console.log(`🚀 Server ready at: http://localhost:4000`)
 );
