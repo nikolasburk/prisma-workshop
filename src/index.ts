@@ -52,7 +52,7 @@ app.get("/user/:id/drafts", async (req, res) => {
 });
 
 app.get(`/post/:id`, async (req, res) => {
-  const { id }: { id?: number } = req.params;
+  const { id } = req.params;
 
   // const result = TODO
 
@@ -60,7 +60,7 @@ app.get(`/post/:id`, async (req, res) => {
 });
 
 app.get("/feed", async (req, res) => {
-  const { searchString, skip, take, orderBy } = req.query;
+  const { searchString, skip, take } = req.query;
 
   // const result = TODO
 
