@@ -1,23 +1,41 @@
-POST http://localhost:3000/signup HTTP/1.1
+GET http://localhost:3000/users
+
+###
+
+POST http://localhost:3000/signup
 Content-Type: application/json
+
 {
-  name: "Nikolas",
-  email: "burk@prisma.io"
+  "name": "Nikolas",
+  "email": "burk@prisma.io"
 }
 
 ###
 
-POST http://localhost:3000/post HTTP/1.1
+POST http://localhost:3000/post
 Content-Type: application/json
+
 {
-  title: "Hello World",
-  authorEmail: "alice@prisma.io"
+  "title": "Hello World",
+  "authorEmail": "alice@prisma.io"
 }
 
 ###
 
-PUT http://localhost:3000/post HTTP/1.1
-{
-  title: "Hello World",
-  authorEmail: "alice@prisma.io"
-}
+PUT http://localhost:3000/post/1/views
+
+###
+
+PUT http://localhost:3000/publish/5
+
+###
+
+GET http://localhost:3000/user/3/drafts
+
+###
+
+GET http://localhost:3000/post/1
+
+###
+
+GET http://localhost:3000/feed
