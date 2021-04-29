@@ -12,7 +12,7 @@ You can clone this repository with the following command:
 git clone git@github.com:nikolasburk/prisma-workshop.git
 ```
 
-> Alternatively, you can also download the project via the GitHub UI. Click the green **Clone**-button in the top-right corner and then click on **Download ZIP**.
+> Alternatively, you can also download the project via the GitHub UI. Click the green **Code**-button in the top-right corner and then click on **Download ZIP**.
 
 ### 2. Install dependencies
 
