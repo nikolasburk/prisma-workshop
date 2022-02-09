@@ -34,8 +34,4 @@ GET http://localhost:3000/user/3/drafts
 
 ###
 
-GET http://localhost:3000/post/1
-
-###
-
 GET http://localhost:3000/feed
