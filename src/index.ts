@@ -1,6 +1,7 @@
 import { ApolloServer } from "apollo-server";
 import { DateTimeResolver } from "graphql-scalars";
 import { Context, context } from "./context";
+import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 
 const typeDefs = `
 type Query {
@@ -100,7 +101,12 @@ const resolvers = {
   DateTime: DateTimeResolver,
 };
 
-const server = new ApolloServer({ typeDefs, resolvers, context });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context,
+  plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
+});
 server.listen({ port: 4000 }, () =>
   console.log(`🚀 Server ready at: http://localhost:4000`)
 );
