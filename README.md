@@ -22,7 +22,3 @@ Navigate into the project directory and install the npm dependencies with the fo
 cd prisma-workshop
 npm install
 ```
-
-## Workshop
-
-You can find all the info for following the workshop [here](https://www.notion.so/prismaio/A-Practical-Introduction-to-Prisma-2021-ccf00a066ef4432caeb03da179e38302).
