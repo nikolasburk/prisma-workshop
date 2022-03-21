@@ -1,6 +1,6 @@
 # A Practical Introduction to Prisma
 
-This repository contains the starter project for the **A Practical Introduction to Prisma** workshop by [Nikolas Burk](https://twitter.com/nikolasburk).
+This repository contains the starter project for the **Database Workflows & API Development with Prisma** workshop by [Nikolas Burk](https://twitter.com/nikolasburk).
 
 ## Setup
 
