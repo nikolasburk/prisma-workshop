@@ -26,7 +26,7 @@ PUT http://localhost:3000/post/1/views
 
 ###
 
-PUT http://localhost:3000/publish/5
+PUT http://localhost:3000/publish/9
 
 ###
 
