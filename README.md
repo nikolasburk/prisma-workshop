@@ -50,13 +50,13 @@ Finally, we'll cover how you can use Prisma Client to implement the resolvers of
 
 # Lessons
 
-[1. Set up Prisma](https://www.notion.so/1-Set-up-Prisma-2bd8c5fde34a4a7b8aaba93569f557c0?pvs=21)
+[1. Set up Prisma](./lesson-1.md)
 
-[2. Explore Prisma Client](https://www.notion.so/2-Explore-Prisma-Client-3b5ec338504149a993c432a1872e5d43?pvs=21)
+[2. Explore Prisma Client](./lesson-2.md)
 
-[3. REST API](https://www.notion.so/3-REST-API-508d2a01ed794c519dc7702c0059ed60?pvs=21)
+[3. REST API](./lesson-3.md)
 
-[4. GraphQL API](https://www.notion.so/4-GraphQL-API-c943ca2edee54f728784a146718faad6?pvs=21)
+[4. GraphQL API](./lesson-4.md)
 
 # What does a lesson look like?
 
